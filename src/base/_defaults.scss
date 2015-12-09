@@ -1,0 +1,22 @@
+// Apply a natural box layout model to all elements, but allowing modules to change
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// Text selection
+::selection {
+  background: transparentize($color-tertiary, 0.4);
+  color: inherit;
+  text-shadow: inherit;
+}
+::-moz-selection {
+  background: transparentize($color-tertiary, 0.4);
+  color: inherit;
+  text-shadow: inherit;
+}
+img::selection {background: transparent;}
+img::-moz-selection {background: transparent;}
+body {-webkit-tap-highlight-color: transparentize($color-tertiary, 0.6);}

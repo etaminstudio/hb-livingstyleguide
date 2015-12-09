@@ -1,0 +1,152 @@
+/**
+ * VARIABLES
+ */
+$ish-header-bgcolor: #999;
+
+$ish-header-height: 33px;
+$ish-rightpull-width: 10px;
+
+
+/**
+ * HEADER
+ */
+.ish-header {
+  background: $ish-header-bgcolor;
+  color: white;
+  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-size: 70%;
+  height: $ish-header-height;
+  left: 0;
+  line-height: $ish-header-height;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 1010;
+  width: 100%;
+
+  a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0 1em;
+    transition: 0.15s ease-out;
+    transition-property: background, color;
+
+    &:hover, &.active {
+      background: darken($ish-header-bgcolor, 5%);
+    }
+  }
+}
+
+.ish-controls {
+  float: right;
+
+  > * {
+    border-left: 1px solid lighten($ish-header-bgcolor, 5%);
+  }
+}
+
+form.ish-current-size {
+  float: left;
+  margin: 0;
+  padding: 0 1em;
+
+  .ish-input {
+    background-color: transparent;
+    border: 1px solid lighten($ish-header-bgcolor, 10%);
+    margin: 0 0.3em;
+    padding: 0.1em 0.3em;
+    text-align: right;
+    transition: all 0.2s ease-out;
+    width: 40px;
+  }
+
+  &:hover .ish-input,
+  .ish-input:active, .ish-input:focus {
+    outline: 0;
+    background: lighten($ish-header-bgcolor, 30%);
+    border-color: transparent;
+    color: darken($ish-header-bgcolor, 30%);
+  }
+}
+
+ul.ish-code-options,
+ul.ish-size-options {
+  display: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+
+  @include susy-breakpoint($bp-small) {
+    display: inline-block;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+
+    &:not(:last-child) {
+      border-right: 1px solid lighten($ish-header-bgcolor, 4%);
+    }
+  }
+}
+
+
+/**
+ * VIEWPORT
+ */
+#ish-vp-wrap {
+  height: calc(100vh - #{$lsg-header-height + $ish-header-height});
+  position: relative;
+  top: $ish-header-height;
+}
+
+#ish-cover {
+  cursor: col-resize;
+  display: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1010;
+}
+
+#ish-container {
+  height: 100%;
+  margin: 0 auto;
+
+  &.hay-mode {
+    transition: all 40s linear;
+  }
+}
+
+#ish-viewport {
+  background-color: darken(#ddd, 5%);
+  border: none;
+  float: left;
+  height: 100%;
+  width: 100%;
+
+  &.hay-mode {
+    transition: all 40s linear;
+  }
+}
+
+#ish-rightpull {
+  background: $ish-header-bgcolor;
+  cursor: col-resize;
+  float: right;
+  height: 100%;
+  transition: background 0.2s ease-out;
+  width: $ish-rightpull-width;
+
+  &:hover {
+    background: darken($ish-header-bgcolor, 5%);
+  }
+  &:active {
+    background: darken($ish-header-bgcolor, 10%);
+  }
+}
+
+.vp-animate {
+  transition: width 0.8s ease-out;
+}

@@ -1,0 +1,32 @@
+// TODO: define all your color variables below
+
+// Main colors
+$color-primary   : #DF225A;
+$color-secondary : #0C518A;
+$color-tertiary  : #F8E273;
+
+.color-primary   {color: $color-primary;}
+.color-secondary {color: $color-secondary;}
+.color-tertiary  {color: $color-tertiary;}
+
+.color-primary-background   {background-color: $color-primary;}
+.color-secondary-background {background-color: $color-secondary;}
+.color-tertiary-background  {background-color: $color-tertiary;}
+
+// Other colors
+$green     : #43B57E;
+$yellow    : #FAE46A;
+$orange    : #F77F68;
+$red       : #DD275C;
+
+// Shades of gray
+$black  : #000;
+$gray1A : #1A1A1A;
+$gray33 : #333;
+$gray4D : #4D4D4D;
+$gray66 : #666;
+$gray99 : #999;
+$grayCC : #CCC;
+$grayEE : #EEE;
+$grayF2 : #F2F2F2;
+$white  : #FFF;

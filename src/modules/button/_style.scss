@@ -1,0 +1,17 @@
+.button {
+  background-color: $white;
+  color: $black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 15px 20px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: $grayEE;
+  }
+}

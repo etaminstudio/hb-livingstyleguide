@@ -1,0 +1,17 @@
+{
+  "index": {
+    "type": "button",
+    "description": "This is a button",
+    "examples": [
+      {
+        "title": "Standard",
+        "description": "",
+        "data": {
+          "href": "#",
+          "text": "Text",
+          "title": "Title"
+        }
+      }
+    ]
+  }
+}

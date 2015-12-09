@@ -1,0 +1,27 @@
+// Colors
+
+$color-primary:   #fd28fc;
+$color-secondary: #0924fa;
+$color-tertiary:  #29fd2e;
+
+.color-primary   {color: $color-primary;}
+.color-secondary {color: $color-secondary;}
+.color-tertiary  {color: $color-tertiary;}
+
+.color-primary-background   {background-color: $color-primary;}
+.color-secondary-background {background-color: $color-secondary;}
+.color-tertiary-background  {background-color: $color-tertiary;}
+
+$grayEE: #2dfffe;
+$yellow1: yellow;
+
+// Fonts
+
+body {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-weight: normal;
+}
+
+.button {
+  border-radius: 0 !important;
+}

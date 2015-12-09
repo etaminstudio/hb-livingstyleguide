@@ -1,0 +1,15 @@
+// Webfonts
+
+// TODO: @font-face declarations go here
+
+
+// Default fonts
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,12 @@
+{
+  "index": {
+    "data": {
+      "title": "Error",
+      "bodyModifiers": ["error"],
+      "button": {
+        "href": "../home/",
+        "text": "Back to home"
+      }
+    }
+  }
+}

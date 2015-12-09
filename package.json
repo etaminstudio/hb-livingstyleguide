@@ -1,0 +1,51 @@
+{
+  "name": "styleguide",
+  "version": "0.0.1",
+  "description": "Living Style Guide",
+  "author": "Hans Lemuet <hans@etaminstudio.com>",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@lukekarrys/jade-runtime": "^1.11.1",
+    "breakpoint-sass": "^2.6.1",
+    "browserify": "^9.0.3",
+    "fastclick": "~1.0.6",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-filter": "^2.0.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "harp": "^0.20",
+    "jade": "^1.9.2",
+    "jadeify": "^4.1.0",
+    "pubsub-js": "^1.5.0",
+    "rimraf": "^2.3.1",
+    "run-sequence": "^1.1.0",
+    "susy": "~2.2.2",
+    "templatizer": "^2.0.2",
+    "through2": "~0.6.3",
+    "velocity-animate": "~1.2.2",
+    "vinyl": "~0.4.6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^2.4.0"
+  },
+  "scripts": {
+    "start": "gulp default",
+    "compile": "gulp compile",
+    "build": "gulp cleanbuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.etaminstud.io:templates/hb-livingstyleguide.git"
+  },
+  "private": true,
+  "license": "MIT"
+}

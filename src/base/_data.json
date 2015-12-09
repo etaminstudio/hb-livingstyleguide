@@ -1,0 +1,47 @@
+{
+  "colors": {
+    "title": "Colors",
+    "colors": [
+      {
+        "title": "Main colors",
+        "items": [
+          {"var": "$color-primary", "hex": "#DF225A", "rgb": "223, 034, 090"},
+          {"var": "$color-secondary", "hex": "#0C518A", "rgb": "012, 081, 138"},
+          {"var": "$color-tertiary", "hex": "#F8E273", "rgb": "248, 226, 115"}
+        ]
+      },
+      {
+        "title": "Other colors",
+        "items": [
+          {"var": "$green", "hex": "#43B57E", "rgb": "067, 181, 126"},
+          {"var": "$yellow", "hex": "#FAE46A", "rgb": "rgb250, 228, 106"},
+          {"var": "$orange", "hex": "#F77F68", "rgb": "247, 127, 104"},
+          {"var": "$red", "hex": "#DD275C", "rgb": "221, 039, 092"}
+        ]
+      },
+      {
+        "title": "Shades of gray",
+        "items": [
+          {"var": "$black", "hex": "#000", "rgb": "0, 0, 0"},
+          {"var": "$gray1A", "hex": "#1A1A1A", "rgb": "026, 026, 026"},
+          {"var": "$gray33", "hex": "#333", "rgb": "051, 051, 051"},
+          {"var": "$gray4D", "hex": "#4D4D4D", "rgb": "077, 077, 077"},
+          {"var": "$gray66", "hex": "#666", "rgb": "102, 102, 102"},
+          {"var": "$gray99", "hex": "#999", "rgb": "153, 153, 153"},
+          {"var": "$grayCC", "hex": "#CCC", "rgb": "204, 204, 204"},
+          {"var": "$grayEE", "hex": "#EEE", "rgb": "238, 238, 238"},
+          {"var": "$grayF2", "hex": "#F2F2F2", "rgb": "242, 242, 242"},
+          {"var": "$white", "hex": "#FFF", "rgb": "255, 255, 255"}
+        ]
+      }
+    ]
+  },
+  "fonts": {
+    "title": "Typography"
+  },
+  "icons": {
+    "title": "Icons",
+    "icons": [
+    ]
+  }
+}

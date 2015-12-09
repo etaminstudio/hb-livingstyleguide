@@ -1,0 +1,30 @@
+mixin color(color)
+  tr
+    th: .lsg-color-dot(style="color: #{color.hex}")
+    td: code= color.var
+    td: code= color.hex
+    td: code= "rgb(#{color.rgb})"
+
+mixin colors-list(title, colors)
+  .lsg-colors-col
+    h2= title
+    table.lsg-colors-table
+      col
+      col
+      col
+      col(style="width: 193px;")
+      thead
+        tr
+          th
+          th SCSS variable
+          th Hex code
+          th RGB
+      each color in colors
+        +color(color)
+
+
+h1= title
+
+.lsg-colors
+  each section in colors
+    +colors-list(section.title, section.items)

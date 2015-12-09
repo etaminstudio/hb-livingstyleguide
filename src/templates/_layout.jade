@@ -1,0 +1,57 @@
+doctype html
+html.no-js(lang="fr")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+
+    - data = data || {}
+
+    if data.title
+      title= data.title + " – Styleguide"
+    else
+      title= "Styleguide"
+
+    link(href="../../stylesheets/print.css" type="text/css" media="print" rel="stylesheet")
+
+    - var css = data && data.theme ? "styleguide-"+data.theme+".css" : "styleguide.css"
+    <!--[if !IE]>-->
+    link#theme(href="../../stylesheets/#{css}" type="text/css" media="screen" rel="stylesheet")
+    <!--<![endif]-->
+
+    <!--[if gte IE 9]>
+    link#theme(href="../../stylesheets/#{css}" type="text/css" media="screen" rel="stylesheet")
+    link(href="../../stylesheets/styleguide-ie.css" type="text/css" media="screen" rel="stylesheet")
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    link(href="../../stylesheets/print.css" type="text/css" media="screen" rel="stylesheet")
+    <![endif]-->
+
+    script(src="../../javascript/modernizr.custom.js")
+
+    if data.metaTags
+      each meta in data.metaTags
+        meta&attributes(meta)
+
+    if data.linkTags
+      each link in data.linkTags
+        link&attributes(link)
+
+  - bodyModifiers = data.bodyModifiers || []
+  - bodyAttributes = data.bodyAttributes || {}
+
+  body(class=bodyModifiers)&attributes(bodyAttributes)
+    != yield
+    script(src="../../javascript/jquery-2.1.4.min.js")
+    script
+      include ../javascript/locales.js
+    script
+      include ../javascript/config.js
+    script(src="../../javascript/styleguide.js")
+    if data.additionalScripts
+      each script in data.additionalScripts
+        if script.src
+          script(src=script.src)
+        else if script.inline
+          script
+            != script.inline

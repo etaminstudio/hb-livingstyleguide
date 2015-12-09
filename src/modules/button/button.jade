@@ -1,0 +1,6 @@
+mixin button(data)
+  - var data = JSON.parse(JSON.stringify(data || {}))
+  - var attributes = data.attributes || {}
+  - var modifiers = data.modifiers || []
+    a.button(href=data.href title=data.title target=data.target class=modifiers)&attributes(attributes)
+      span.button-text= data.text

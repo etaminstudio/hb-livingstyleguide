@@ -1,0 +1,32 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Specific to the project
+/www
+node_modules
+tmp/*
+!tmp/.gitkeep
+src/javascript/client.tpl.js
+src/javascript/styleguide.js
+src/javascript/styleguide.js.map

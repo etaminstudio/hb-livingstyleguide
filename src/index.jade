@@ -1,0 +1,35 @@
+.lsg-content-wrapper
+  .lsg-toc-summary
+    h2= title
+    .lsg-toc-col
+      h3 Base
+        small global styles
+      ul
+        - for file, index in public.base._data
+          if index != 'index'
+            li
+              a(href="/ish.html#base/#{index}.html")
+                = file.title
+      h3 Layouts
+        small reusable layouts
+      ul
+        - for layout in public.layouts._data.layouts
+          li
+            a(href="/ish.html#layouts/#{layout}")
+              = layout
+    .lsg-toc-col
+      h3 Modules
+        small reusable UI elements
+      ul
+        - for module in public.modules._data.modules
+          li
+            a(href="/ish.html#modules/#{module}")
+              = module
+    .lsg-toc-col
+      h3 Templates
+        small ready-to-use page templates
+      ul
+        - for template in public.templates._data.templates
+          li
+            a(href="/ish.html#templates/#{template}")
+              = template.replace('.html', '')

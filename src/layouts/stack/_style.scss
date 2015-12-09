@@ -1,0 +1,23 @@
+.layout-stack {
+  background-color: $white;
+  color: $black;
+  width: 100%;
+  overflow: hidden;
+
+  .layout-main > .layout-content {
+    & + .layout-content {
+      padding-top: 40px;
+    }
+
+    /* modifiers */
+    &.gray-background {
+      background-color: $grayF2;
+      padding: 40px 0;
+    }
+  }
+
+  .layout-wrapper {
+    margin: 0 auto;
+  }
+
+}

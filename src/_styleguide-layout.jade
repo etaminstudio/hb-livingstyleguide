@@ -1,0 +1,31 @@
+doctype html
+html.no-js(lang="fr")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    title= title
+
+    link(href="/stylesheets/lsg.css" type="text/css" rel="stylesheet")
+    link(href="/stylesheets/prism.css" type="text/css" rel="stylesheet")
+
+    - var css = cssTheme ? "styleguide-"+cssTheme+".css" : "styleguide.css"
+    link#theme(href="/stylesheets/#{css}" type="text/css" rel="stylesheet")
+
+    script(src="/javascript/modernizr.custom.js")
+
+  - bodyAttributes = bodyAttributes || {}
+
+  body&attributes(bodyAttributes)
+    .lsg-content-wrapper
+      block main
+
+    script
+      include ./javascript/locales.js
+    script
+      include ./javascript/config.js
+    script(src="/javascript/jquery-2.1.4.min.js")
+    script(src="/javascript/styleguide.js")
+
+    script(src="/javascript/beautify-html.js")
+    script(src="/javascript/prism.js")
+    script(src="/javascript/lsg.js")

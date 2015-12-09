@@ -1,0 +1,19 @@
+include code
+
+mixin example(ex)
+  if ex.title
+      h2.lsg-example-title= ex.title
+
+  if ex.description
+    p.lsg-example-description!= ex.description
+
+  - ex.attrs = ex.attrs || {}
+  //- - ex.dataSample = JSON.parse(JSON.stringify(ex.data || {}))
+
+  .lsg-elem&attributes(ex.attrs)
+    +#{type}(ex.data)
+
+  +code("jade").
+    include #{type}
+
+    +#{type}(#{JSON.stringify(ex.data, null, 2)})

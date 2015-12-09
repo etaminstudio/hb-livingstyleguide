@@ -1,0 +1,16 @@
+h1= title
+
+p The following icons are available in the form of a webfont. They are scalable and can be styled with CSS (color, size ...)
+
+p
+  | They can be integrated by adding a simple class&nbsp;
+  code .icon-*
+  |  to an element.
+
+table.lsg-icons
+  each icon in icons
+    tr
+      th
+        i(class="icon-#{icon}")
+      td
+        code .icon-#{icon}

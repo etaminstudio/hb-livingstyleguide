@@ -1,0 +1,11 @@
+include example
+
+h1.lsg-elem-title= type
+
+if description
+  p.lsg-elem-desc!= description
+
+block elements
+  - examples = examples || []
+  each ex in examples
+    +example(ex)
