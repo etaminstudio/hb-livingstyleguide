@@ -4,7 +4,7 @@ var join = require('path').join;
 var harpOutput = join(process.cwd(), 'www');
 var buildOutput = join(process.cwd(), 'build');
 var harpSrc = join(process.cwd(), 'src');
-var fontsPath = join(process.cwd(), 'src', 'fonts');
+var fontsPath = join(process.cwd(), 'src', 'base', 'fonts');
 
 module.exports = {
   port: 9000,

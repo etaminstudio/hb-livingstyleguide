@@ -13,7 +13,7 @@ var imageFilter = gulpFilter([
 ]);
 
 gulp.task('build:images', function () {
-  return gulp.src(['src/**/*', '!src/fonts/**'])
+  return gulp.src(['src/**/*', '!src/base/fonts/**'])
       .pipe(imageFilter)
       .pipe(imagemin({
           progressive: true,
