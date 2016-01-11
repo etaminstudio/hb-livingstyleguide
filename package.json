@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Living Style Guide",
   "author": "Hans Lemuet <hans@etaminstudio.com>",
+  "contributors": [
+    {"name": "Jonathan Blanchet"},
+    {"name": "Valentin Cassat"}
+  ],
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
