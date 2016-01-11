@@ -10,8 +10,8 @@ var templatizer = require('templatizer');
 // Build the runtime for use with Browserify
 // see http://www.forbeslindesay.co.uk/post/46324645400/standalone-browserify-builds
 gulp.task('build:runtime', ['templatize:runtime'], function () {
-  // TODO: rename Project.templates with your project namespace
-  browserify(path.join(config.tmp.output, config.runtime.filenameTmp), {standalone: 'Project.templates'})
+  // TODO: below, rename "Styleguide" with your project JS namespace
+  browserify(path.join(config.tmp.output, config.runtime.filenameTmp), {standalone: 'Styleguide.templates'})
     .bundle()
     .pipe(fs.createWriteStream(path.join(config.tmp.output, config.runtime.filename)));
 });
