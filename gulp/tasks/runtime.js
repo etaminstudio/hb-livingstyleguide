@@ -1,38 +1,38 @@
-var gulp        = require('gulp');
-var config      = require('../config');
-var templatizer = require('templatizer');
-var browserify  = require('browserify');
-var fs          = require('fs');
+'use strict';
 
+var browserify  = require('browserify');
+var config      = require('../config');
+var fs          = require('fs');
+var gulp        = require('gulp');
+var path        = require('path');
+var templatizer = require('templatizer');
+
+// Build the runtime for use with Browserify
+// see http://www.forbeslindesay.co.uk/post/46324645400/standalone-browserify-builds
 gulp.task('build:runtime', ['templatize:runtime'], function () {
-  // Standalone Browserify Builds
-  // http://www.forbeslindesay.co.uk/post/46324645400/standalone-browserify-builds
-  browserify(config.tmp.output + '/runtime.tpl.unpkg.js', {standalone: 'Styleguide.templates'})
+  // TODO: rename Project.templates with your project namespace
+  browserify(path.join(config.tmp.output, config.runtime.filenameTmp), {standalone: 'Project.templates'})
     .bundle()
-    .pipe(fs.createWriteStream(config.tmp.output + '/runtime.tpl.js'));
+    .pipe(fs.createWriteStream(path.join(config.tmp.output, config.runtime.filename)));
 });
 
+// Compile all the jade templates to a single JS file in tmp
 gulp.task('templatize:runtime', function (cb) {
   templatizer(
-    config.harp.input+'/modules/!(_*)/*.jade',
-    config.tmp.output + '/runtime.tpl.unpkg.js', {
+    config.src + '/@(modules)/!(_*)/*.jade',
+    path.join(config.tmp.output, config.runtime.filenameTmp), {
       transformMixins: true,
       globOptions: { ignore: ['**/index.jade'] }
     }, cb);
 });
 
-
-gulp.task('build:clients', function (cb) {
-  //gulp.src('./src/javascript/config.js')
-  //  .pipe(gulp.dest(config.build.assets.javascript));
-  //
-  //var clients = config.templatizer.client_modules;
-  //
-  //templatizer(
-  //  config.harp.input+'/modules/@('+clients.join('|')+')/*.jade',
-  //  config.harp.input + '/javascript/client.tpl.js', {
-  //    transformMixins: true,
-  //    globOptions: { ignore: ['**/index.jade'] }
-  //  }, cb);
+// Compile selected jade templates for use client-side
+gulp.task('build:clients', ['copy:config'], function (cb) {
+  templatizer(
+    config.src + '/@(modules)/@(' + config.runtime.clientModules.join('|') + ')/*.jade',
+    path.join(config.src, 'javascript', config.runtime.clientFilename), {
+      transformMixins: true,
+      globOptions: { ignore: ['**/index.jade'] }
+    }, cb);
 });
 

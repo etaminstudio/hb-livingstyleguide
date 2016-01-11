@@ -11,7 +11,7 @@ html.no-js(lang="fr")
     else
       title= "Styleguide"
 
-    link(href="../../stylesheets/print.css" type="text/css" media="print" rel="stylesheet")
+    link(href="../../stylesheets/project-print.css" type="text/css" media="print" rel="stylesheet")
 
     - var css = data && data.theme ? "styleguide-"+data.theme+".css" : "styleguide.css"
     <!--[if !IE]>-->
@@ -24,10 +24,10 @@ html.no-js(lang="fr")
     <![endif]-->
 
     <!--[if lt IE 9]>
-    link(href="../../stylesheets/print.css" type="text/css" media="screen" rel="stylesheet")
+    link(href="../../stylesheets/project-print.css" type="text/css" media="screen" rel="stylesheet")
     <![endif]-->
 
-    script(src="../../javascript/modernizr.custom.js")
+    script(src="../../javascript/lib/modernizr.custom.js")
 
     if data.metaTags
       each meta in data.metaTags
@@ -42,7 +42,7 @@ html.no-js(lang="fr")
 
   body(class=bodyModifiers)&attributes(bodyAttributes)
     != yield
-    script(src="../../javascript/jquery-2.1.4.min.js")
+    script(src="../../javascript/lib/jquery-2.1.4.min.js")
     script
       include ../javascript/locales.js
     script

@@ -1,10 +1,11 @@
 'use strict';
 
-var gulp        = require('gulp');
-var harp        = require('harp');
-var path        = require('path');
-var config      = require('../config');
+var config = require('../config');
+var gulp = require('gulp');
+var harp = require('harp');
+var path = require('path');
 
+// Start the styleguide to view it in the browser
 gulp.task('harp:serve', function() {
   var projectPath = path.join(process.cwd(), 'src');
   console.log(projectPath);
@@ -14,6 +15,7 @@ gulp.task('harp:serve', function() {
   });
 });
 
+// Compile the styleguide as a static website
 gulp.task('harp:compile', function() {
   var projectPath = path.join(process.cwd(), 'src');
   var outputPath = config.harp.output;

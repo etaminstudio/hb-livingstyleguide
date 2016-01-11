@@ -1,10 +1,12 @@
-var gulp   = require('gulp');
+'use strict';
+
 var config = require('../config');
-var path   = require('path');
+var gulp = require('gulp');
+var path = require('path');
 var rename = require('gulp-rename');
 
-
-gulp.task('build:jade:copy', function () {
+// Copy all jade and json files to the build
+gulp.task('build:jade', function () {
   gulp.src([
       'src/modules/**/*.jade',
       '!src/modules/**/index.jade',
@@ -13,17 +15,8 @@ gulp.task('build:jade:copy', function () {
       'src/modules/**/*.json',
       'src/layouts/**/*.jade',
       '!src/layouts/**/index.jade',
-      '!src/layouts/wrapper*.jade',
-      '!src/layouts/_wrapper*.jade',
-      '!src/layouts/_layout*.jade',
+      '!src/layouts/_layout.jade',
       'src/layouts/**/*.json'
     ], { base: './src/' })
     .pipe(gulp.dest(path.join(config.build.output, 'jade')));
 });
-
-gulp.task('build:jade', ['build:jade:copy'], function () {
-  gulp.src(path.join('src', 'layouts', '_wrapper.jade'))
-    .pipe(rename('wrapper.jade'))
-    .pipe(gulp.dest(path.join('build', 'jade', 'layouts')));
-});
-

@@ -1,20 +1,27 @@
 'use strict';
 
 var join = require('path').join;
-var harpOutput = join(process.cwd(), 'www');
 var buildOutput = join(process.cwd(), 'build');
-var harpSrc = join(process.cwd(), 'src');
-var fontsPath = join(process.cwd(), 'src', 'base', 'fonts');
+var srcInput = join(process.cwd(), 'src');
+var harpOutput = join(process.cwd(), 'www');
+var fontsPath = join(process.cwd(), 'src', 'fonts');
 
 module.exports = {
   port: 9000,
 
+  src: srcInput,
+
   js: {
-    output: 'styleguide.js'
+    output: 'project.js'
   },
 
   css: {
-    output: 'styleguide.css'
+    input: join(srcInput, 'stylesheets', 'project*.scss'),
+    output: 'project.css'
+  },
+
+  fonts: {
+    input: fontsPath
   },
 
   tmp: {
@@ -22,13 +29,17 @@ module.exports = {
   },
 
   harp: {
-    input: harpSrc,
+    input: srcInput,
     output: harpOutput
   },
 
-  templatizer: {
-    client_modules: [
+  runtime: {
+    filename: 'runtime.tpl.js',
+    filenameTmp: 'runtime.tpl.unpkg.js',
+    clientFilename: 'client.tpl.js',
+    clientModules: [
       // TODO: add here modules you want to access in the front-end
+      'button'
     ]
   },
 
@@ -38,10 +49,9 @@ module.exports = {
       css: join(buildOutput, 'assets', 'stylesheets'),
       cssExpanded: join(buildOutput, 'assets', 'stylesheets', 'expanded'),
       javascript: join(buildOutput, 'assets', 'javascript'),
+      javascriptLib: join(buildOutput, 'assets', 'javascript', 'lib'),
       fonts: join(buildOutput, 'assets', 'fonts'),
-      images: join(buildOutput, 'assets', 'images'),
+      images: join(buildOutput, 'assets', 'images')
     }
-  },
-
-  fontsPath: fontsPath
+  }
 };
